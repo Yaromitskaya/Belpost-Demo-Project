@@ -3,7 +3,7 @@ import path from "path";
 import { SubscriptionPage } from "../support/pages/subscription.page";
 import { filesToDownload } from "../support/data/download.data";
 
-test.only("Downloading a file to file system", async ({ page }) => {
+test("Downloading a file to file system", async ({ page }) => {
   const subscriptionPage = new SubscriptionPage(page);
 
   await subscriptionPage.goto();
