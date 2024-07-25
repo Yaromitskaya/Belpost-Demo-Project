@@ -15,5 +15,4 @@ test("Login via API", async ({ request }) => {
   await expect(loginResponce.phone).toBe(
     loginData.validLoginData.userValidLogin.slice(1)
   );
-  console.log(loginResponce);
 });

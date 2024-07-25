@@ -15,8 +15,6 @@ test.describe("Shipment track validation", () => {
       loginData.validLoginData.userValidLogin,
       loginData.validLoginData.userValidPassword
     );
-    // await page.goto("./");
-    // await page.waitForLoadState("domcontentloaded");
   });
 
   test("Search by valid shipment track number", async ({ page }) => {
@@ -25,7 +23,6 @@ test.describe("Shipment track validation", () => {
     const validTrackNumber = "LA153517218BY";
 
     await mainPage.shipmentTrackNumberField.fill(validTrackNumber);
-    // await page.pause();
     await mainPage.trackNumberSearchButton.click();
     await shipmentSearchPage.trackItemTitle.click();
     await expect(shipmentSearchPage.searchResultAlert).toHaveText(

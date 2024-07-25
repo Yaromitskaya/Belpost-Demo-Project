@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { MainPage } from "../support/pages/main.page";
 
-test.only("Change color theme of the visual page", async ({ page }) => {
+test("Change color theme of the visual page", async ({ page }) => {
   const mainPage = new MainPage(page);
 
   await page.goto("./");

@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 import { PhilatelyCatalogPage } from "../support/pages/philately.catalog.page";
 import { PhilatelyPage } from "../support/pages/philately.page";
 import { philatelySearchData } from "../support/data/search.data";
+import { api } from "../support/data/api.data";
 
 let philatelyCatalogPage: PhilatelyCatalogPage;
 let philatelyPage: PhilatelyPage;
@@ -32,9 +33,15 @@ test.describe("Philately search", () => {
 
     await philatelyPage.clearSearchBtn.click();
 
-    await page.waitForTimeout(2000);
-
+    await page.waitForResponse(
+      (response) =>
+        response.url() === api.getAllCatalogItems &&
+        response.status() === 200 &&
+        response.request().method() === "GET"
+    );
     searhResultCount = await philatelyCatalogPage.stampPreviewCard.count();
+
+    console.log(searhResultCount);
 
     await expect(searhResultCount).toBeGreaterThan(1);
   });

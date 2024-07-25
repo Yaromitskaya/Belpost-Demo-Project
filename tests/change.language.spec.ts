@@ -7,20 +7,23 @@ test("Change languages", async ({ page }) => {
 
   await page.goto("./");
 
-  await mainPage.chooseLanguageMenu.selectOption(languages.belorussianLanguage);
+  await mainPage.chooseLanguageMenu.selectOption(
+    languages.langs.belorussianLanguage
+  );
   await expect(mainPage.mainPageHeader).toHaveText(
-    mainPage.mainPageHeaderTextBy
+    languages.assertMsgs.mainPageHeaderTextBy
   );
 
-  await mainPage.chooseLanguageMenu.selectOption(languages.englishLanguage);
-  await expect(mainPage.mainPageHeader).toHaveText(
-    mainPage.mainPageHeaderTextEn
+  await mainPage.chooseLanguageMenu.selectOption(
+    languages.langs.englishLanguage
   );
-  await mainPage.chooseLanguageMenu.selectOption(languages.russianLanguage);
   await expect(mainPage.mainPageHeader).toHaveText(
-    mainPage.mainPageHeaderTextRu
+    languages.assertMsgs.mainPageHeaderTextEn
+  );
+  await mainPage.chooseLanguageMenu.selectOption(
+    languages.langs.russianLanguage
+  );
+  await expect(mainPage.mainPageHeader).toHaveText(
+    languages.assertMsgs.mainPageHeaderTextRu
   );
 });
-
-
-//.header__container .header__item--secondary

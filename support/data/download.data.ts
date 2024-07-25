@@ -1,4 +1,4 @@
 export const filesToDownload = {
-  path2download: "c:/Users/Professional/Documents/playwright.downloads/",
+  path2download: "downloads",
   downloadedFileName: "FzlFOq0rClMQDoO9.doc",
 };
