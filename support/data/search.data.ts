@@ -1,8 +1,14 @@
-export const shipmentSearchMessages = {
-  packageNotFoundMsg:
-    "У нас пока нет данных об этом трек-номере. Попробуйте проверить позже",
-  nonValidTrackNumberMsg: "Ошибка ввода",
-  emptySearchFieldMsg: "Поле обязательно для заполнения",
+export const shipmentSearchData = {
+  trackNumbers: {
+    validTrackNumber: "LA153517218BY",
+    nonValidTrackNumber: "LA555713521",
+  },
+  shipmentSearchMessages: {
+    packageNotFoundMsg:
+      "У нас пока нет данных об этом трек-номере. Попробуйте проверить позже",
+    nonValidTrackNumberMsg: "Ошибка ввода",
+    emptySearchFieldMsg: "Поле обязательно для заполнения",
+  },
 };
 
 export const philatelySearchData = {

@@ -3,7 +3,7 @@ import { UserProfilePage } from "../support/pages/user.profile.page";
 import { LoginPage } from "../support/pages/login.page";
 import { loginData, userData } from "../support/data/user.data";
 
-test("", async ({ page }) => {
+test("Change user's second name", async ({ page }) => {
   const userProfilePage = new UserProfilePage(page);
   const loginPage = new LoginPage(page);
 
